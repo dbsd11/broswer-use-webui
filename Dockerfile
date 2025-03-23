@@ -66,6 +66,9 @@ ENV BROWSER_USE_LOGGING_LEVEL=info
 ENV CHROME_PATH=/ms-playwright/chromium-*/chrome-linux/chrome
 ENV ANONYMIZED_TELEMETRY=false
 ENV CHROME_PERSISTENT_SESSION=false
+ENV RESOLUTION=1920x1080x24
+ENV RESOLUTION_WIDTH=1920
+ENV RESOLUTION_HEIGHT=1080
 
 # Set up supervisor configuration
 RUN mkdir -p /var/log/supervisor
