@@ -287,7 +287,7 @@ async def run_org_agent(
     try:
         global _global_browser, _global_browser_context, _global_agent
 
-        extra_chromium_args = [f"--window-size={window_w},{window_h}"]
+        extra_chromium_args = ["--no-sandbox", "--headless", "--disable-gpu", "--extra_chromium_args", f"--window-size={window_w},{window_h}"]
         cdp_url = chrome_cdp
 
         if use_own_browser:
@@ -390,7 +390,7 @@ async def run_custom_agent(
     try:
         global _global_browser, _global_browser_context, _global_agent
 
-        extra_chromium_args = [f"--window-size={window_w},{window_h}"]
+        extra_chromium_args = ["--no-sandbox", "--headless", "--disable-gpu", "--extra_chromium_args", f"--window-size={window_w},{window_h}"]
         cdp_url = chrome_cdp
         if use_own_browser:
             cdp_url = os.getenv("CHROME_CDP", chrome_cdp)
