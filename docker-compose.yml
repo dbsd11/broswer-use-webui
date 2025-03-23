@@ -35,8 +35,6 @@ services:
       - RESOLUTION_HEIGHT=${RESOLUTION_HEIGHT:-1080}
       - CHROME_DEBUGGING_PORT=9222
       - CHROME_DEBUGGING_HOST=localhost
-    volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix
     restart: unless-stopped
     shm_size: '2gb'
     cap_add:
