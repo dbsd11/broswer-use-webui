@@ -36,8 +36,8 @@ services:
         timeout: 7200
         caPort: 7788
         environmentVariables:
-          ALIBABA_ENDPOINT: ${alibaba_ai_endpoint}
-          ALIBABA_API_KEY: ${alibaba_ai_key}
+          ALIBABA_ENDPOINT: ${vars.alibaba_ai_endpoint}
+          ALIBABA_API_KEY: ${vars.alibaba_ai_key}
           BROWSER_USE_LOGGING_LEVEL: info
           ANONYMIZED_TELEMETRY: false
           CHROME_PERSISTENT_SESSION: false
