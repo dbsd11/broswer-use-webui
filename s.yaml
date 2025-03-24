@@ -41,14 +41,12 @@ services:
           BROWSER_USE_LOGGING_LEVEL: info
           ANONYMIZED_TELEMETRY: false
           CHROME_PERSISTENT_SESSION: false
-          CHROME_CDP: http://localhost:9223
-          DISPLAY: 99
+          CHROME_CDP: http://localhost:9222
           PLAYWRIGHT_BROWSERS_PATH: /ms-playwright
           RESOLUTION: 1920x1080x24
           RESOLUTION_WIDTH: 1920
           RESOLUTION_HEIGHT: 1080
-          VNC_PASSWORD: vncpassword
-          CHROME_DEBUGGING_PORT: 9223
+          CHROME_DEBUGGING_PORT: 9222
           CHROME_DEBUGGING_HOST: localhost
         customContainerConfig: 
           image: "registry.cn-beijing.aliyuncs.com/dbsnolimit/browser-use-webui:latest"
