@@ -12,7 +12,7 @@ def default_config():
         "max_actions_per_step": 10,
         "use_vision": True,
         "tool_calling_method": "auto",
-        "llm_provider": "openai",
+        "llm_provider": "alibaba",
         "llm_model_name": "gpt-4o",
         "llm_num_ctx": 32000,
         "llm_temperature": 0.6,
