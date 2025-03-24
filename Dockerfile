@@ -42,6 +42,7 @@ RUN apt-get update && apt-get install -y \
     fonts-dejavu-extra \
     vim \
     gcc \
+    patchelf \
     && rm -rf /var/lib/apt/lists/*
 
 # Set platform for ARM64 compatibility
@@ -61,9 +62,6 @@ RUN playwright install-deps
 
 # Copy the application code
 COPY . .
-
-# 编译c code
-RUN python -m nuitka --follow-imports webui.py
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1
