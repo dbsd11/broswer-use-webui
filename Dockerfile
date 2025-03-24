@@ -40,7 +40,7 @@ RUN apt-get update && apt-get install -y \
     fonts-dejavu \
     fonts-dejavu-core \
     fonts-dejavu-extra \
-    vi \
+    vim \
     && rm -rf /var/lib/apt/lists/*
 
 # Set platform for ARM64 compatibility
