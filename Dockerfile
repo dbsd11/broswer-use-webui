@@ -41,6 +41,7 @@ RUN apt-get update && apt-get install -y \
     fonts-dejavu-core \
     fonts-dejavu-extra \
     vim \
+    gcc \
     && rm -rf /var/lib/apt/lists/*
 
 # Set platform for ARM64 compatibility
@@ -51,7 +52,7 @@ WORKDIR /app
 
 # Copy requirements and install Python dependencies
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt && pip install nuitka
 
 # Install Playwright and browsers with system dependencies
 ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
@@ -60,6 +61,9 @@ RUN playwright install-deps
 
 # Copy the application code
 COPY . .
+
+# 编译c code
+RUN python -m nuitka --follow-imports webui.py
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1
